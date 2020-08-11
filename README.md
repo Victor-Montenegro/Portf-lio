@@ -7,8 +7,8 @@
     Estou me desenvolvendo é crescendo para me torna um profissional/pessoa mais responsavel e organizado. Ainda não tenho experiência no
     mercado de trabalho, mas estou pronto para receber todo conhecimento, para me torna o melhor profissional/pessoa para empresa,
     é principalmente para os meus colegas.
- <br/> :purple_heart: Buscando colaborar com projetos em Front-end
- <br/> :blush: Com o que eu puder ajudar vou ajudar,mesmo que tenha que corre atrás da respota.
+ <br/> :purple_heart: Buscando colaborar com projetos em Front-end é back-end
+ <br/> :blush: Com o que eu puder ajudar vou ajudar,mesmo que tenha que correr atrás da resposta.
  <br/> :computer: Minha stack: java básico, c++ básico, sql básico.
  <br/> 💬  &nbsp; Sobre mim: Curto tecnologias, games RPG, the witcher 3, seriados e animes. 
  <br/> :email: Entre em contato comigo: [![Linkedin Badge](https://img.shields.io/badge/-VictorMontenegro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/joao-victor-montenegro-595791194/)](https://www.linkedin.com/in/joao-victor-montenegro-595791194/) 
