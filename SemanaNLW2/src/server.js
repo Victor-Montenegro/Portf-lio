@@ -1,4 +1,5 @@
 
+//aplicattion data 
 const weekdays = [
         "Domingo",
         "Segunda-feira",
@@ -35,6 +36,15 @@ const proffys = [
         time_to:[1220] } 
 ]
 
+// aplicattion functionallity
+
+function getSubject(subjectNumber) {
+        const position = +subjectNumber - 1
+        return subjects[position]
+
+
+}
+
 function pageLanding(req,res){
          return res.render("index.html")
  }
@@ -45,25 +55,58 @@ function pageStudy(req,res){
  }       
 
 function pageGiveClasses(req,res){
-        return res.render( "give-classes.html")
+        const data = req.query
+
+        //checking if there is any data in data = req.query 
+                                    //transforma em um vetor com as chaves/variaveis de um dado, ex( {name, avatar, bio},voce notou são os mesmo da const proffys )   
+        const isNotEmpty = Object.keys(data).length > 0
+        if (isNotEmpty) {
+
+                data.subject = getSubject(data.subject)
+
+                //adding data to the list / vector of the proffys
+                proffys.push(data)
+
+                return res.redirect("/study")
+        }
+        
+        return res.render( "give-classes.html", {subjects, weekdays})
 }
 
- const express = require('express') 
+// server 
+const express = require('express') 
 const server =  express() 
 const nunjucks = require('nunjucks')
 
- 
+// nunjucks configuration (template engine)
 nunjucks.configure('src/views', {
         express: server,
         noChace: true,             
 })
 
+// server start and configuration
 server 
 .use(express.static("public"))  
 
+//aplicattion routes
 .get("/", pageLanding)
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)                        
-
+// start server
 .listen(5500)
+
+
+//  
+//                                                                       
+//                                   const isNotEmpty = Object.Keys(data).length > 0
+       
+//                                   //console.log(data)
+                          
+//                                   if (isNotEmpty) {
+//                                           //console.log("entrei aqui")
+//                                           
+//                                           proffys.push(data)
+                                          
+//                                           return res.redirect("/study")
+//                                   }
          
