@@ -44,9 +44,23 @@
     width: 90%;
 }
 
+#page-study main .no-results {
+    max-width: 28rem;
+    
+    font: 500 1.6rem Poppins;
+
+    margin: 12rem auto;
+    
+    text-align: center;
+    
+    color: var(--color-text-complement);
+}
+
 main article {
     margin-bottom: 2rem;
 }
+
+
 
 .teacher-item {
     background: var(--color-box-base);
@@ -185,6 +199,16 @@ main article {
         max-width: 740px;
         margin: 0 auto;
     }
+
+    /* #page-study main no-results {
+        font: 500 1.6rem Poppins;
+        display: flex;
+        justify-content: center;
+        padding: 9rem 23rem;
+        text-align: center;
+        line-height: 3rem;
+        color: var(--color-text-complement);
+    } */
 
     #search-teachers .select-block {
         margin-bottom: 0;
