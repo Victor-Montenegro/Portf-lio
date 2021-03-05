@@ -1,6 +1,6 @@
 # Victor Montenegro 
 
-## Olá, tudo bem :wave:
+## Olá, tudo bem! :wave:
     Eu sou João Victor Montenegro Rocha, mas pode me chamar de João, mesmo eu sendo super tímido, estou aprendendo e tentado 
     ser o mais compreensivo é comunicativo possivel.
 

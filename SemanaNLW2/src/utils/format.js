@@ -34,7 +34,7 @@ function convertHoursToMinutes(time){
                                     //o split e um funcionalidade para string, onde ele separa a string usando o parametro que voce deseja, ex, se as horas estao sendo separadas por ":"(09:00), voce vai usar como parametro os dois pontos ":", fazendo assim que o split vai seperar em como um array, ["09","00"]
     const [hour, minutes] = time.split(":") // e a mais coisa se for fazer assim == const [hours] = time.split(":")[0], const [minutes] = time.split(":")[1]
             //number e uma funcionalidade para garartir que o retorno seja um numero
-    return Number( (hour * 60) + minutes )
+    return Number( parseInt( (hour * 60) ) + parseInt(minutes) )
 }
 
 

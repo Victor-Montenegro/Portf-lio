@@ -13,7 +13,6 @@ async function pageStudy(req,res){
         return res.render('study.html', {filters, subjects, weekdays} )  
     }
 
-    
     const timeToMinutes = convertHoursToMinutes(filters.time)
 
     const query = `
@@ -31,14 +30,17 @@ async function pageStudy(req,res){
         AND
         classes.Cla_Subject = '${filters.subject}'
     `
-
-    
-     //aqui e a hora que vamos fazer a conexao com o banco de dados, o try e uma boa pratica para capturar erros durante o execução do banco
+   //aqui e a hora que vamos fazer a conexao com o banco de dados, o try e uma boa pratica para capturar erros durante o execução do banco
       try {
           const db = await Database
-          const proffys = await db.all(query)
+          const proffys = await db.all(query)  
+          
+          proffys.map( (proffys) => {
+            proffys.Cla_Subject = getSubject(proffys.Cla_Subject)
 
-          return res.render('study.html', {proffys, subjects, filters, weekdays})
+          } )
+
+          return res.render('study.html', { proffys, filters, subjects, weekdays })
         
       } catch (error) {
           console.log(error)
@@ -47,27 +49,60 @@ async function pageStudy(req,res){
 }       
 
 function pageGiveClasses(req,res){
-    const data = req.query
-
-    //checking if there is any data in data = req.query 
-                            //transforma em um vetor com as chaves/variaveis de um dado, ex( {name, avatar, bio},voce notou são os mesmo da const proffys )   
-    const isNotEmpty = Object.keys(data).length > 0
-    if (isNotEmpty) {
-
-        data.subject = getSubject(data.subject)
-
-        //adding data to the list / vector of the proffys
-        proffys.push(data)
-
-        return res.redirect("/study")
-}
-
+    
 return res.render( "give-classes.html", {subjects, weekdays})
 }
+
+function pageSuccess(req, res) {
+
+    return res.render("success.html")
+}
+
+async function saveClasses(req, res){
+    const createProffy = require('./database/createProffy')
+
+    const proffyValue = {
+        name: req.body.name,
+        avatar: req.body.avatar,
+        whatsapp: req.body.whatsapp,
+        bio: req.body.bio
+    }
+
+    const classValue = {
+        subject: req.body.subject,
+        cost: req.body.cost
+    }
+
+    const classScheduleValues = req.body.weekday.map((weekday, index) => {
+
+        return {
+            weekday,
+            time_from: convertHoursToMinutes(req.body.time_from[index]),
+            time_to: convertHoursToMinutes(req.body.time_to[index])
+
+        }
+    })
+
+    try {
+        const db = await Database
+        await createProffy(db, { proffyValue, classValue, classScheduleValues } )
+
+        return res.redirect("/study")
+    } catch (error) {
+        console.log(error) 
+    }
+    
+    // ao receber os dados usando o query, na url da pagina vai aparecer o formulario, para esconder isso utilizamos o body,mas deve configurar no server,pois como padrao ele nao pode receber no body
+
+        
+}
+
 
 module.exports = {
     pageLanding,
     pageStudy,
-    pageGiveClasses
+    pageGiveClasses,
+    saveClasses,
+    pageSuccess
 }
 

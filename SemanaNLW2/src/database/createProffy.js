@@ -39,7 +39,7 @@ module.exports = async function(db, { proffyValue, classValue, classScheduleValu
                         // difenrete do forEach, onde ele vai inteirar cada elemento e navegar por cada um dos elementos e colocando dentro da function, mas nao pode returnar nada, como nesse caso eu quero um return, entao utilizamos o map. onde ele vai fazer o mesmo papel do forEach, mas possibilitando o retorno, e cria um novo array 
     const insertedAllClassScheduleValues = classScheduleValues.map( (values) => {
 
-        db.run(`
+        return db.run(`
             INSERT INTO class_schedule (
                 CLa_ID,
                 Sch_Weekday,

@@ -76,24 +76,24 @@
 
                     {% else %}
 
-                        {% for proffy in proffys %}
+                        {%for proffy in proffys %}
                             <article class="teacher-item">
                                 <header>
-                                    <img src="{{proffy.avatar}}"
-                                        alt="{{proffy.name}}">
+                                    <img src="{{proffy.Pro_Avatar}}"
+                                        alt="{{proffy.Pro_Name}}">
                                     <div>
-                                        <strong>{{proffy.name}}</strong>
-                                        <span>{{proffy.subject}}</span>
+                                        <strong>{{proffy.Pro_Name}}</strong>
+                                        <span>{{proffy.Cla_Subject}}</span>
                                     </div>
                                 </header>
 
-                                <p>{{proffy.bio}} </p>
+                                <p>{{proffy.Pro_Bio}} </p>
 
                                 <footer>
-                                    <p> Preço/hora<strong>R$ {{proffy.cost}}</strong> </p>
+                                    <p> Preço/hora<strong>R$ {{proffy.Cla_Cost}}</strong> </p>
                                     
-                                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua
-                                    aula de {{proffy.subject}} {{proffy.name}}" class="button" target="_blank">
+                                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.Pro_Whatsapp}}&text=Tenho interesse na sua
+                                    aula de {{proffy.Cla_Subject}} {{proffy.Pro_Name}}" class="button" target="_blank">
                                         <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
                                     </a>
                                 </footer>
@@ -101,7 +101,7 @@
                             </article>
                         {% endfor %}
 
-                    {% endif %}
+                    {%endif%}
                 </main>
             </div>
     

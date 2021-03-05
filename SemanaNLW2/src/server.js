@@ -3,7 +3,7 @@ const express = require('express')
 const server =  express() 
 
 
-const {pageLanding, pageStudy, pageGiveClasses} = require('./pages')
+const {pageLanding, pageStudy, pageGiveClasses, saveClasses,pageSuccess} = require('./pages')
 
 // nunjucks configuration (template engine)
 const nunjucks = require('nunjucks')
@@ -13,15 +13,20 @@ nunjucks.configure('src/views', {
 })
 
 // server start and configuration
-server 
+server
+// receive data from req.body
+.use(express.urlencoded( {extended : true}))
+// configuration of static files (css,scripts, imagens)
 .use(express.static("public"))  
 
 //aplicattion routes
 .get("/", pageLanding)
 .get("/study", pageStudy)
-.get("/give-classes", pageGiveClasses)                        
+.get("/success", pageSuccess)
+.get("/give-classes", pageGiveClasses)   
+.post("/save-classes", saveClasses)                     
 // start server
-.listen(5500)
+.listen(5501)
 
 
 //  
