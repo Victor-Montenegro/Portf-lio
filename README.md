@@ -6,7 +6,7 @@
 
     Estou me desenvolvendo é crescendo para me torna um profissional e uma pessoa mais responsavel e organizada. Ainda não tenho experiência
     no mercado de trabalho, mas estou pronto para receber todo conhecimento para me torna o melhor profissional para empresa,e a melhor pessoa           para os meus colegas.
- <br/> :purple_heart: Buscando colaborar com projetos em Front-end é back-end
+ <br/> :purple_heart: Buscando colaborar com projetos no back-end.
  <br/> :blush: Com o que eu puder ajudar vou ajudar! Buscando juntos a resposta.
  <br/> :computer: O que predentendo aprender: javaScript, mongoDB, node.js, API Rast 
  <br/> 💬  &nbsp; Sobre mim: Curto tecnologias, games RPG, the witcher 3, seriados e animes. 
