@@ -30,9 +30,7 @@ body {
 }
  
 
-body {
-
-    
+body {   
     background: var(--color-background);    
     display: flex;  
     align-items: center ; 
