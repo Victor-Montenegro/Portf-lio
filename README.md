@@ -4,7 +4,8 @@
     Eu sou João Victor Montenegro Rocha, mas pode me chamar de João, mesmo eu sendo super tímido, estou aprendendo e tentado 
     ser o mais compreensivo é comunicativo possivel.
 
-    Estou me desenvolvendo é crescendo para me torna um profissional e uma pessoa mais responsável e organizada. Estou pronto para receber todo conhecimento para me torna o melhor profissional para empresa e colegas.
+    Estou me desenvolvendo é crescendo para me torna um profissional e uma pessoa mais responsável e organizada. Estou pronto 
+    para receber todo conhecimento para me torna o melhor profissional para empresa e colegas.
 
  <br/> :purple_heart: Buscando colaborar com projetos no back-end.
  <br/> :blush: Com o que eu puder ajudar vou ajudar! Buscando juntos a resposta.
