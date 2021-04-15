@@ -5,15 +5,9 @@
     ser o mais compreensivo é comunicativo possivel.
 
     Estou me desenvolvendo é crescendo para me torna um profissional e uma pessoa mais responsavel e organizada. Ainda não tenho experiência
-<<<<<<< HEAD
-    no mercado de trabalho, mas estou pronto para receber todo conhecimento para me torna o melhor profissional para empresa,e a melhor pessoa    para os meus colegas.
- <br/> :purple_heart: Buscando colaborar com projetos no back-end.
-=======
-    no mercado de trabalho, mas estou pronto para receber todo conhecimento para me torna o melhor profissional para empresa e a melhor 
-    pessoa para os meus colegas.
+    no mercado de trabalho, mas estou pronto para receber todo conhecimento para me torna o melhor profissional para empresa e colegas.
 
-<br/> :purple_heart: Buscando colaborar com projetos no back-end.
->>>>>>> 81219b449a5fc01717fcac9aa9b8d089f41b0181
+ <br/> :purple_heart: Buscando colaborar com projetos no back-end.
  <br/> :blush: Com o que eu puder ajudar vou ajudar! Buscando juntos a resposta.
  <br/> :computer: O que predentendo aprender: javaScript, mongoDB, node.js, API Rast 
  <br/> 💬  &nbsp; Sobre mim: Curto tecnologias, games RPG, the witcher 3, seriados e animes. 
