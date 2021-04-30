@@ -47,7 +47,7 @@
 	    		<div class="col-md-8">
 	    			<div class="noticia_wrapper">
 		    			<span class="noticia_autor"><%= ultNoticias[0].autor%></span>
-		    			<a href="/noticia" class="noticia_titulo"><%= ultNoticias[0].titulo%></a>
+		    			<a href="/noticia?id_noticia=<%= ultNoticias[0].id_noticia%>" class="noticia_titulo"><%= ultNoticias[0].titulo%></a>
 		    			<span class="noticia_data"><%= ultNoticias[0].data_noticia%></span>
 		    			<br />
 		    			<p class="noticia_resumo">
@@ -59,7 +59,7 @@
 	    		<div class="col-md-4">
 	    			<div class="noticia_wrapper">
 		    			<span class="noticia_autor"><%= ultNoticias[1].autor%></span>
-		    			<a href="/noticia" class="noticia_titulo"><%= ultNoticias[1].titulo%></a>
+		    			<a href="/noticia?id_noticia=<%= ultNoticias[1].id_noticia%>" class="noticia_titulo"><%= ultNoticias[1].titulo%></a>
 		    			<span class="noticia_data"><%= ultNoticias[1].data_noticia%></span>
 		    			<br />
 		    			<p class="noticia_resumo">
@@ -76,7 +76,7 @@
 						<div class="col-md-4">
 							<div class="noticia_wrapper">
 								<span class="noticia_autor"><%= ultNoti.autor%></span>
-								<a href="/noticia" class="noticia_titulo"><%= ultNoti.titulo%></a>
+								<a href="/noticia?id_noticia=<%= ultNoti.id_noticia%>" class="noticia_titulo"><%= ultNoti.titulo%></a>
 								<span class="noticia_data"><%= ultNoti.data_noticia%></span>
 								<br />
 								<p class="noticia_resumo">

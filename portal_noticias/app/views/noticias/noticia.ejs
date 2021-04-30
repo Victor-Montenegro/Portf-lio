@@ -41,21 +41,27 @@
 			</div>
 		</nav>
 
-
+		
 	    <div class="container">
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia/1" class="noticia_titulo">Título da notícia MUDAR O HREF</a>
-		    			<span class="noticia_data">07/09/2016</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o texto da notícia na íntegra.
-		    			</p>
-		    		</div>
-		    	</div>
-	    	</div>
+			<% if(noticia) {%>
+				
+				<% noticia.forEach( n => { %>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="noticia_wrapper">
+								<span class="noticia_autor"><%= n.autor%></span>
+								<a href="noticia/1" class="noticia_titulo"><%= n.titulo%></a>
+								<span class="noticia_data"><%= n.noticia_data%></span>
+								<br />
+								<p class="noticia_resumo">
+									<%= n.noticia%>
+								</p>
+							</div>
+						</div>
+					</div>
+		
+				<% })%>
+			<% } %>
 	    </div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
