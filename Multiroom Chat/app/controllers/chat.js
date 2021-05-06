@@ -13,7 +13,9 @@ module.exports.iniciarChat = (app,req,res) =>{
         return
     }
 
-    res.render(`chat`)
+    app.get(`io`).emit(`msgServidorCliente`,{apelido: dadoUsuario.apelido,mensagem:`Acabou de se conectar!`})
+
+    res.render(`chat`,{apelido: dadoUsuario.apelido})
 }
 
 
