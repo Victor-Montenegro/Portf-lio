@@ -24,7 +24,19 @@
                             </div>
                         </div>
                         <% if(errors) {%>
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger">
+                                            
+                                        <strong>Atenção!</strong>
+                                        <ul>
+                                            <% errors.forEach(e =>{ %>
+                                                <li><%= e.msg %></li>
+                                            <% }) %>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         <% } %>
                         <div class="panel-body">
                             <form accept-charset="UTF-8" role="form" class="form-signin" action="/chat" method="post">
