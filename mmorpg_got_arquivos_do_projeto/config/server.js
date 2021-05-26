@@ -19,7 +19,7 @@ app.use(expressValidator())
 
 app.use(express.static(`app/public`))
 
-app.use(expreesSession({
+app.use(expressSession({
     secret: `asf123rtfsdg234`,
     resave: false,
     saveUninitialized: false
