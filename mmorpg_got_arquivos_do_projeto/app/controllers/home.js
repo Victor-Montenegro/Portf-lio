@@ -19,4 +19,11 @@ module.exports.autentificar = (app,req,res) => {
         res.render(`home/index`,{errors: errors, dadosUsuario: dadosUsuario})
         return
     }
+
+    //instanciando banco de dados e model do usuario
+    const collection = app.config.database
+    const usuarioModel = new app.app.models.UsuarioDAO(collection)
+
+    //chamando classe para cadastrar usuarios
+    usuarioModel.autentificar(dadosUsuario,req,res)
 }

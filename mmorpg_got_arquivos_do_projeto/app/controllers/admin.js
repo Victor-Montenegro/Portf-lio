@@ -23,6 +23,11 @@ module.exports.cadastrar= (app,req,res) =>{
         return
     }
 
+    // instanciando  database e model 
+    const connection = app.config.database
+    const usuarioModel = new app.app.models.UsuarioDAO(connection)
+
+    usuarioModel.inserirNovoUsuario(dadosUsuario,res)
 }
 
 

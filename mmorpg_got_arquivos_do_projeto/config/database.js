@@ -28,11 +28,14 @@ var createConnection = (dados) =>{
 //função de interação com o banco 
 function query(db,dados){
     
-    var collection = db.collection(dados.collection)
+    const collection = db.collection(dados.collection)
 
     switch(dados.operacao){
-        case `insert`:
+        case `insert`: 
+            collection.insertOne(dados.usuario,dados.callback)
+            break
         case `find`:
+            collection.findOne(dados.usuario,dados.callback)
         case `update`:
         case `remove`:
     }
