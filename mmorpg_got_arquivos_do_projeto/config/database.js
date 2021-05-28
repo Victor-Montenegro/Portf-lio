@@ -32,10 +32,11 @@ function query(db,dados){
 
     switch(dados.operacao){
         case `insert`: 
-            collection.insertOne(dados.usuario,dados.callback)
+            collection.insert(dados.usuario,dados.callback)
             break
         case `find`:
             collection.findOne(dados.usuario,dados.callback)
+            break
         case `update`:
         case `remove`:
     }

@@ -23,7 +23,7 @@ module.exports.autentificar = (app,req,res) => {
     //instanciando banco de dados e model do usuario
     const collection = app.config.database
     const usuarioModel = new app.app.models.UsuarioDAO(collection)
-
-    //chamando classe para cadastrar usuarios
+    //chamando classe autentificar para realziar o login do usuarios
     usuarioModel.autentificar(dadosUsuario,req,res)
+    
 }
