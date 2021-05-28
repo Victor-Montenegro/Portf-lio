@@ -14,6 +14,38 @@
 		<!-- incluindo css -->
 		<link href="css/style.css" rel="stylesheet">
 
+		<script>
+			$(document).ready(()=>{
+
+				$("#btn-sair").click(()=>{
+
+					window.location.href = "http://localhost/deslogar" 
+				})
+				
+				$("#btn-aldeao").click(()=>{
+
+					$.ajax({
+						url: "/aldeoes",
+						method: "get",
+						success: htmlAldeoes => {
+							$("#acoes").html(htmlAldeoes)
+						}
+					})
+				})
+
+
+				$("#btn-pergaminhos").click(()=>{
+					$.ajax({
+						url: "/pergaminhos",
+						method: "get",
+						success: htmlPergaminhos => {
+							$("#acoes").html(htmlPergaminhos )
+						}
+					})
+				})
+			})
+		</script>
+
 	</head>
 
 	<body class="body-jogo">
@@ -21,7 +53,7 @@
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
 				<div class="form-group sair">
-					<button type="button" class="btn btn-info pull-right">Sair</button>
+					<button type="button" class="btn btn-info pull-right" id="btn-sair">Sair</button>
 				</div>
 			</div>
 		</nav>
@@ -30,29 +62,29 @@
 	    	
 			<div class="row">
 	    		<div class="col-sm-3 casa">
-					<img src="images/casa_martell.jpg" />
+					<img src="images/casa_<%= propriedades.casa%>.jpg" />
 				</div>
 
 	    		<div class="col-sm-9">
 					<div class="row barra-superior">
 						<div class="col-sm-2"> 
 							<img src="images/habilidades/temor.jpg" title="Temor" alt="Temor" />
-							<span>754</span>
+							<span><%= propriedades.temor%></span>
 						</div>
 						
 						<div class="col-sm-2"> 
 							<img src="images/habilidades/sabedoria.jpg" title="Sabedoria" alt="Sabedoria"/>
-							<span>754</span>
+							<span><%= propriedades.sabedoria%></span>
 						</div>
 						
 						<div class="col-sm-2"> 
 							<img src="images/habilidades/comercio.jpg" title="Comércio" alt="Comércio"/>
-							<span>754</span>
+							<span><%= propriedades.comercio%></span>
 						</div>
 						
 						<div class="col-sm-2"> 
 							<img src="images/habilidades/magia.jpg" title="Magia" alt="Magia"/>
-							<span>754</span>
+							<span><%= propriedades.magia%></span>
 						</div>
 					</div>
 				</div>
@@ -61,7 +93,22 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-9">
-					<div class="acoes"></div>					
+					<div id="acoes" class="acoes">
+						<% if(msg){ %>
+							<div class="alert alert-info">
+								<strong>ATENÇÂO!</strong>
+								<ul>
+									<% if(msg == "O"){ %>
+										<li>Informe todos os dados da Ordem!</li>
+									<% } %>
+									<% if(msg == "OR"){ %>
+										<li>Ordem registrada senhor!</li>
+									<% } %>
+
+								</ul>
+							</div>
+						<% } %>
+					</div>					
 				</div>
 			</div>
 			
@@ -72,18 +119,19 @@
 			
 				<div class="row">
 					<div class="col-sm-1">
-						<img src="images/outros/suditos.jpg" title="Aldeões" alt="Aldeões"/>
+						<img src="images/outros/aldeoes.jpg" id="btn-aldeao" title="Aldeões" alt="Aldeões"/>
+						<span><%= propriedades.aldeoes%></span>
 					</div>
 					
 					<div class="col-sm-1">
-						<img src="images/outros/pergaminho.jpg" title="Pergaminhos" alt="Pergaminhos"/>
+						<img src="images/outros/pergaminho.jpg" id="btn-pergaminhos"title="Pergaminhos" alt="Pergaminhos"/>
 					</div>
 					
 					<div class="col-sm-8"></div>
 					
 					<div class="col-sm-2">
 						<img src="images/outros/moeda.jpg" title="Moeda" alt="Moeda"/>
-						<span>25</span>
+						<span><%= propriedades.moeda%></span>
 					</div>
 					
 				</div>
