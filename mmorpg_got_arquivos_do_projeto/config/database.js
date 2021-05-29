@@ -35,10 +35,20 @@ function query(db,dados){
             collection.insert(dados.usuario,dados.callback)
             break
         case `find`:
-            collection.findOne(dados.usuario,dados.callback)
+            collection.find(dados.usuario,dados.callback)
             break
         case `update`:
+            collection.updateOne(dados.usuario,dados.update,dados.options).then(result => {
+                const { matchedCount, modifiedCount } = result;
+                if(matchedCount && modifiedCount) {
+                    //   console.log(`Successfully added a new review.`)
+                }
+              })
+              .catch(err => console.error(`Failed to add review: ${err}`))
+              break
         case `remove`:
+            collection.deleteOne(dados.usuario,dados.callback)
+            break
     }
 
 }

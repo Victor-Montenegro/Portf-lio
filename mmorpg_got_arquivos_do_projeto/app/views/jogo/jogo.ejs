@@ -40,10 +40,35 @@
 						method: "get",
 						success: htmlPergaminhos => {
 							$("#acoes").html(htmlPergaminhos )
+							
+							clearTimeout(timeId)
+							cronometro()
 						}
 					})
 				})
 			})
+
+			let timeId = null
+			let rect = false
+			function cronometro(){
+
+				$(".tempo_restante").each(function(){
+					var segundos = $(this).html()
+					var segundosAtuais = parseInt(segundos) - 1
+
+					if(segundosAtuais < 0 ){
+						window.location.href = "/jogo?msg=ORE"
+						rect = true
+					}else{
+						$(this).html(segundosAtuais)
+
+					}
+				})
+
+				timeId = setTimeout(()=>{
+					if(!rect){cronometro()}
+				},1000)
+			}
 		</script>
 
 	</head>
@@ -101,8 +126,17 @@
 									<% if(msg == "O"){ %>
 										<li>Informe todos os dados da Ordem!</li>
 									<% } %>
+									
 									<% if(msg == "OR"){ %>
 										<li>Ordem registrada senhor!</li>
+									<% } %>
+
+									<% if(msg == "OF"){ %>
+										<li>Uma das ordens foi finalizada senhor!</li>
+									<% } %>
+
+									<% if(msg == "ORE"){ %>
+										<li>ordem revogada senhor!</li>
 									<% } %>
 
 								</ul>

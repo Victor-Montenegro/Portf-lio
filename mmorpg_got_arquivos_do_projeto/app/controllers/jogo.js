@@ -144,11 +144,9 @@ module.exports.ordenarSudito = (app,req,res) => {
     //instanciando database e model jogo
     const connection =  app.config.database
     const jogoModel = new app.app.models.JogoDAO(connection)
-
     //chamando classe novaOrdem 
     jogoModel.novaOrdem(dadosOrdem,res)
 }
-
 
 module.exports.pergaminhos = (app,req,res) => {
     if(!req.session.usuario){
@@ -176,5 +174,24 @@ module.exports.pergaminhos = (app,req,res) => {
             `)
     }
 
-    res.render(`jogo/pergaminhos`)
+    // exigindo database e model 
+    const connection = app.config.database
+    const jogoModel = new app.app.models.JogoDAO(connection)
+
+    // chamando o metodo ordemEmAcao que procura as ordens em vigor
+    jogoModel.ordemEmAcao(req,res)
+
+}
+
+module.exports.revogarOrdem = (app,req,res) => {
+
+    //recebendo id da ordem 
+    const _id = req.query._id
+
+    //intanciando database e model
+    const connection = app.config.database
+    const jogoModel = new app.app.models.JogoDAO(connection)
+
+    //chamando o metodo revogarOrdem
+    jogoModel.revogarOrdem(_id,res)
 }

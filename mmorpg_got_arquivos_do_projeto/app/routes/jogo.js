@@ -25,4 +25,9 @@ module.exports = app =>{
 
         app.app.controllers.jogo.pergaminhos(app,req,res)
     })
+
+    app.get(`/revogar-ordem`, (req,res)=>{
+
+        app.app.controllers.jogo.revogarOrdem(app,req,res)
+    })
 }

@@ -75,18 +75,20 @@ UsuarioDAO.prototype.autentificar = function(dadosUsuario,req,res){
        collection: `usuarios`,
        callback: (error, result) => {
 
-           // tratando usuario invalido
-           if(result == null){
-               const errors = [{
-                   msg:`usuario ou senha incorretos!`
-               }]
-               res.render(`home/index`,{errors:errors, dadosUsuario: dados.usuario})
-               return
-           }
+           result.toArray((err, result)=>{
+               // tratando usuario invalido
+                if(result == null){
+                    const errors = [{
+                        msg:`usuario ou senha incorretos!`
+                    }]
+                    res.render(`home/index`,{errors:errors, dadosUsuario: dados.usuario})
+                    return
+                }
 
-           //criando variaveis de sessão com modulo session
-           req.session.usuario = {casa:result.casa,usuario:result.usuario}
-           res.redirect(`/jogo`)
+                //criando variaveis de sessão com modulo session
+                req.session.usuario = {casa:result[0].casa,usuario:result[0].usuario}
+                res.redirect(`/jogo`)
+           })
        }
    }
 
